@@ -73,7 +73,7 @@ def choosen_stocks(tradeback_days,direction_up,price_rate,turnover_rate,drop_rat
             contrast_turnover_stock = contrast_stocks[contrast_stocks['代码'].str.contains(stock_code[1])]
             action_date_turnover_stock = action_date_stocks[action_date_stocks['代码'].str.contains(stock_code[1])]
             if contrast_turnover_stock.iat[0,6] > turnover_rate * action_date_turnover_stock.iat[0,6]:
-                choosen_stocks.append(action_date_turnover_stock)
+                choosen_stocks.append(action_date_turnover_stock,ignore_index=True)
 
         except IndexError:
             continue
