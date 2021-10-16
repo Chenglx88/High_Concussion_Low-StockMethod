@@ -9,8 +9,6 @@ from chinese_calendar import is_workday,is_holiday
 import time
 
 start = time.perf_counter()
-end = time.perf_counter()
-t = end - start
 
 #操作日
 action_date = dt.date.today()
@@ -84,4 +82,6 @@ def choosen_stocks(tradeback_days,direction_up,price_rate,turnover_rate,drop_rat
 
 choosen_stocks = choosen_stocks(3,True,8,1,-5)
 print(choosen_stocks)
+end = time.perf_counter()
+t = end - start
 print('Runtime is: ',t)
